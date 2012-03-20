@@ -1,21 +1,29 @@
-@import '../../kickz/lib/bootstrap/less/bootstrap.less';
+@import "../../bootkick/lib/bootstrap/bootstrap.less";
+@import "../../bootkick/lib/bootstrap/bootstrap-reset.less";
+@import "../../bootkick/lib/bootstrap/bootstrap-addons.less";
+// @import "../../bootkick/lib/bootstrap/bootstrap-typography.less";
+@import "../../bootkick/lib/bootstrap/bootstrap-print.less";
+
+@import '../../bootkick/css/typography.less';
+@import '../../bootkick/css/variables.less';
+
 @import 'variables.less';
+
 
 #header,
 #content-wrap,
 #footer{
 	& > .wrap{
-		width: @siteWidth;
-		.container-fixed;
+		.column-container(@gridColumns, @gridColumnWidth, @gridGutterWidth)
 	}
 }
 
 section.content{
-	#grid > .core > .span(9);
+	.columns(9);
 	float: left;
 }
 
 aside{
-	#grid > .core > .span(3);
+	.columns(3);
 	float: right;
 }
